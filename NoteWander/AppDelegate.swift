@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        presentRootVC()
         return true
     }
 
@@ -42,6 +43,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    private func presentRootVC() {
+        let vc = NotesListViewController(nibName: "NotesListViewController", bundle: nil)
+        let navVC = UINavigationController(rootViewController: vc)
+        
+        if self.window == nil {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+        }
+        window?.rootViewController = navVC
+        window?.makeKeyAndVisible()
     }
 
     // MARK: - Core Data stack

@@ -15,6 +15,16 @@
 		B628AE3B2082386000A10876 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B628AE392082386000A10876 /* LaunchScreen.storyboard */; };
 		B628AE462082386000A10876 /* NoteWanderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628AE452082386000A10876 /* NoteWanderTests.swift */; };
 		B628AE512082386000A10876 /* NoteWanderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628AE502082386000A10876 /* NoteWanderUITests.swift */; };
+		B628AE5F2082393E00A10876 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628AE5E2082393E00A10876 /* Utility.swift */; };
+		B628AE6620823B3600A10876 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628AE6420823B3600A10876 /* NotesListViewController.swift */; };
+		B628AE6720823B3600A10876 /* NotesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B628AE6520823B3600A10876 /* NotesListViewController.xib */; };
+		B628AE6C20823B6F00A10876 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628AE6A20823B6F00A10876 /* NoteViewController.swift */; };
+		B628AE6D20823B6F00A10876 /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B628AE6B20823B6F00A10876 /* NoteViewController.xib */; };
+		B628AE7020823C3F00A10876 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628AE6E20823C3F00A10876 /* NoteTableViewCell.swift */; };
+		B628AE7120823C3F00A10876 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B628AE6F20823C3F00A10876 /* NoteTableViewCell.xib */; };
+		B628AE74208283A900A10876 /* NoteMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628AE72208283A900A10876 /* NoteMO+CoreDataClass.swift */; };
+		B628AE75208283A900A10876 /* NoteMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628AE73208283A900A10876 /* NoteMO+CoreDataProperties.swift */; };
+		B6600A50208330C6009CA788 /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6600A4F208330C6009CA788 /* NoteListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,16 @@
 		B628AE4C2082386000A10876 /* NoteWanderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteWanderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B628AE502082386000A10876 /* NoteWanderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWanderUITests.swift; sourceTree = "<group>"; };
 		B628AE522082386000A10876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B628AE5E2082393E00A10876 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		B628AE6420823B3600A10876 /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
+		B628AE6520823B3600A10876 /* NotesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotesListViewController.xib; sourceTree = "<group>"; };
+		B628AE6A20823B6F00A10876 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		B628AE6B20823B6F00A10876 /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
+		B628AE6E20823C3F00A10876 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		B628AE6F20823C3F00A10876 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
+		B628AE72208283A900A10876 /* NoteMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B628AE73208283A900A10876 /* NoteMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B6600A4F208330C6009CA788 /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +119,12 @@
 		B628AE2C2082386000A10876 /* NoteWander */ = {
 			isa = PBXGroup;
 			children = (
+				B628AE76208283E200A10876 /* Model */,
+				B628AE5E2082393E00A10876 /* Utility.swift */,
 				B628AE2D2082386000A10876 /* AppDelegate.swift */,
 				B628AE2F2082386000A10876 /* ViewController.swift */,
+				B628AE6120823AD600A10876 /* Note */,
+				B628AE6020823AC600A10876 /* NotesList */,
 				B628AE312082386000A10876 /* Main.storyboard */,
 				B628AE372082386000A10876 /* Assets.xcassets */,
 				B628AE392082386000A10876 /* LaunchScreen.storyboard */,
@@ -126,6 +150,68 @@
 				B628AE522082386000A10876 /* Info.plist */,
 			);
 			path = NoteWanderUITests;
+			sourceTree = "<group>";
+		};
+		B628AE6020823AC600A10876 /* NotesList */ = {
+			isa = PBXGroup;
+			children = (
+				B628AE6420823B3600A10876 /* NotesListViewController.swift */,
+				B628AE6320823B0300A10876 /* ViewModel */,
+				B628AE6220823AF300A10876 /* View */,
+			);
+			path = NotesList;
+			sourceTree = "<group>";
+		};
+		B628AE6120823AD600A10876 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				B628AE6A20823B6F00A10876 /* NoteViewController.swift */,
+				B628AE6920823B5A00A10876 /* View */,
+				B628AE6820823B4F00A10876 /* ViewModel */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		B628AE6220823AF300A10876 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B628AE6520823B3600A10876 /* NotesListViewController.xib */,
+				B628AE6E20823C3F00A10876 /* NoteTableViewCell.swift */,
+				B628AE6F20823C3F00A10876 /* NoteTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B628AE6320823B0300A10876 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B6600A4F208330C6009CA788 /* NoteListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B628AE6820823B4F00A10876 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B628AE6920823B5A00A10876 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B628AE6B20823B6F00A10876 /* NoteViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B628AE76208283E200A10876 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B628AE72208283A900A10876 /* NoteMO+CoreDataClass.swift */,
+				B628AE73208283A900A10876 /* NoteMO+CoreDataProperties.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,8 +321,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B628AE6720823B3600A10876 /* NotesListViewController.xib in Resources */,
 				B628AE3B2082386000A10876 /* LaunchScreen.storyboard in Resources */,
 				B628AE382082386000A10876 /* Assets.xcassets in Resources */,
+				B628AE7120823C3F00A10876 /* NoteTableViewCell.xib in Resources */,
+				B628AE6D20823B6F00A10876 /* NoteViewController.xib in Resources */,
 				B628AE332082386000A10876 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,8 +351,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B628AE5F2082393E00A10876 /* Utility.swift in Sources */,
+				B628AE75208283A900A10876 /* NoteMO+CoreDataProperties.swift in Sources */,
 				B628AE302082386000A10876 /* ViewController.swift in Sources */,
+				B628AE6620823B3600A10876 /* NotesListViewController.swift in Sources */,
+				B628AE74208283A900A10876 /* NoteMO+CoreDataClass.swift in Sources */,
 				B628AE362082386000A10876 /* NoteWander.xcdatamodeld in Sources */,
+				B628AE6C20823B6F00A10876 /* NoteViewController.swift in Sources */,
+				B628AE7020823C3F00A10876 /* NoteTableViewCell.swift in Sources */,
+				B6600A50208330C6009CA788 /* NoteListViewModel.swift in Sources */,
 				B628AE2E2082386000A10876 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +529,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AQ6PMKC8S6;
 				INFOPLIST_FILE = NoteWander/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.manas.NoteWander;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,6 +545,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AQ6PMKC8S6;
 				INFOPLIST_FILE = NoteWander/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.manas.NoteWander;
 				PRODUCT_NAME = "$(TARGET_NAME)";
