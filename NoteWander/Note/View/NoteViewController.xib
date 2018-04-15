@@ -35,7 +35,7 @@
                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write Something" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Al9-uH-w0j">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write Note" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Al9-uH-w0j">
                     <rect key="frame" x="8" y="66" width="359" height="270"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>

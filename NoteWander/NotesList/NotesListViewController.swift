@@ -30,6 +30,7 @@ class NotesListViewController: UIViewController {
     }
    
     private func configureViews() {
+        self.navigationItem.title = "NoteList"
         self.view.alpha = 0.3
         activityIndicator.startAnimating()
         configureTableView()

@@ -28,25 +28,6 @@ class NoteViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func configureVC() {
-        addNavigationButton()
-        noteDescriptionTV.delegate = self
-        titleTF.delegate = self
-        configureViews()
-    }
-
-    private func configureViews() {
-        if addNewNote {return}
-        titleTF.text = note?.title
-        noteDescriptionTV.text = note?.noteDescription
-    }
-    private func addNavigationButton() {
-        let backButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.backButtonClicked))
-        self.navigationItem.setLeftBarButton(backButton, animated: true)
-        guard !addNewNote else { return }
-        let saveButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(self.deleteButtonClicked))
-        self.navigationItem.setRightBarButton(saveButton, animated: true)
-    }
     @objc func deleteButtonClicked() {
         self.view.alpha = 0.3
         self.activityIndicator.startAnimating()
@@ -62,44 +43,6 @@ class NoteViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
-    private func saveNote() {
-        if (titleTF.text == "Untitled" && (noteDescriptionTV.text == "" || noteDescriptionTV.text == "Write Note")) {
-            popVC()
-            return
-        }
-        if (titleTF.text == note?.title) && (noteDescriptionTV.text == note?.noteDescription) {
-            popVC()
-            return
-        }
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        let moc = appDelegate.persistentContainer.viewContext
-        guard let newNote = addNewNote ? NoteMO(context: moc) : note else {return}
-        newNote.title = titleTF.text
-        newNote.noteDescription = noteDescriptionTV.text
-        newNote.updatedAt = Date() as NSDate
-        DispatchQueue.global().async {
-            do {
-                 try moc.save()
-            } catch {
-                print(error)
-            }
-            self.popVC()
-        }
-    }
-    private func deleteNote() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
-        let moc = appDelegate.persistentContainer.viewContext
-        moc.delete(note!)
-        DispatchQueue.global().async {
-            do {
-                try moc.save()
-            } catch {
-                print(error)
-            }
-            self.popVC()
-        }
-    }
-
 }
 
 extension NoteViewController: UITextViewDelegate, UITextFieldDelegate {
@@ -118,14 +61,75 @@ extension NoteViewController: UITextViewDelegate, UITextFieldDelegate {
             textView.text = ""
         }
     }
-    func textViewDidChange(_ textView: UITextView) {
-        
-    }
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-        if textView.text.count > 300 {
-            return true
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if (textView.text == "") {
+            textView.text = "Write Note"
         }
-        return false
+    }
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.count > 300 {
+            let newText = textView.text.dropLast(textView.text.count - 300)
+            textView.text = newText
+        }
+    }
+}
+
+//Helper function
+extension NoteViewController {
+    private func configureVC() {
+        addNavigationButton()
+        noteDescriptionTV.delegate = self
+        titleTF.delegate = self
+        configureViews()
+    }
+    
+    private func configureViews() {
+        self.navigationItem.title = "Note"
+        if addNewNote {return}
+        titleTF.text = note?.title
+        noteDescriptionTV.text = note?.noteDescription
+    }
+    private func addNavigationButton() {
+        let backButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.backButtonClicked))
+        self.navigationItem.setLeftBarButton(backButton, animated: true)
+        guard !addNewNote else { return }
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(self.deleteButtonClicked))
+        self.navigationItem.setRightBarButton(saveButton, animated: true)
+    }
+}
+
+//Save And Delete operation
+extension NoteViewController {
+    private func saveNote() {
+        if (titleTF.text == "Untitled" && (noteDescriptionTV.text == "" || noteDescriptionTV.text == "Write Note")) {return popVC() }
+        if (titleTF.text == note?.title) && (noteDescriptionTV.text == note?.noteDescription) {return popVC()}
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let moc = appDelegate.persistentContainer.viewContext
+        guard let newNote = addNewNote ? NoteMO(context: moc) : note else {return}
+        newNote.title = titleTF.text
+        newNote.noteDescription = noteDescriptionTV.text
+        newNote.updatedAt = Date() as NSDate
+        DispatchQueue.global().async {
+            do {
+                try moc.save()
+            } catch {
+                print(error)
+            }
+            self.popVC()
+        }
+    }
+    private func deleteNote() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let moc = appDelegate.persistentContainer.viewContext
+        moc.delete(note!)
+        DispatchQueue.global().async {
+            do {
+                try moc.save()
+            } catch {
+                print(error)
+            }
+            self.popVC()
+        }
     }
 }
 

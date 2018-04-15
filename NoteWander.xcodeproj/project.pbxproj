@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B628AE2E2082386000A10876 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628AE2D2082386000A10876 /* AppDelegate.swift */; };
-		B628AE302082386000A10876 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628AE2F2082386000A10876 /* ViewController.swift */; };
 		B628AE332082386000A10876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B628AE312082386000A10876 /* Main.storyboard */; };
 		B628AE362082386000A10876 /* NoteWander.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B628AE342082386000A10876 /* NoteWander.xcdatamodeld */; };
 		B628AE382082386000A10876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B628AE372082386000A10876 /* Assets.xcassets */; };
@@ -47,7 +46,6 @@
 /* Begin PBXFileReference section */
 		B628AE2A2082386000A10876 /* NoteWander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteWander.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B628AE2D2082386000A10876 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B628AE2F2082386000A10876 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B628AE322082386000A10876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B628AE352082386000A10876 /* NoteWander.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NoteWander.xcdatamodel; sourceTree = "<group>"; };
 		B628AE372082386000A10876 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				B628AE76208283E200A10876 /* Model */,
 				B628AE5E2082393E00A10876 /* Utility.swift */,
 				B628AE2D2082386000A10876 /* AppDelegate.swift */,
-				B628AE2F2082386000A10876 /* ViewController.swift */,
 				B628AE6120823AD600A10876 /* Note */,
 				B628AE6020823AC600A10876 /* NotesList */,
 				B628AE312082386000A10876 /* Main.storyboard */,
@@ -167,7 +164,6 @@
 			children = (
 				B628AE6A20823B6F00A10876 /* NoteViewController.swift */,
 				B628AE6920823B5A00A10876 /* View */,
-				B628AE6820823B4F00A10876 /* ViewModel */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -186,13 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				B6600A4F208330C6009CA788 /* NoteListViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		B628AE6820823B4F00A10876 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -353,7 +342,6 @@
 			files = (
 				B628AE5F2082393E00A10876 /* Utility.swift in Sources */,
 				B628AE75208283A900A10876 /* NoteMO+CoreDataProperties.swift in Sources */,
-				B628AE302082386000A10876 /* ViewController.swift in Sources */,
 				B628AE6620823B3600A10876 /* NotesListViewController.swift in Sources */,
 				B628AE74208283A900A10876 /* NoteMO+CoreDataClass.swift in Sources */,
 				B628AE362082386000A10876 /* NoteWander.xcdatamodeld in Sources */,

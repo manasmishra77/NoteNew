@@ -37,12 +37,22 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXm-cc-adA">
+                        <rect key="frame" x="0.0" y="105.5" width="471" height="1"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="dfc-P3-ikM"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Wb5-jT-mtF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="7iw-na-Riy"/>
                     <constraint firstItem="Nei-a1-zF9" firstAttribute="leading" secondItem="Wb5-jT-mtF" secondAttribute="leading" id="BKs-9A-ZZZ"/>
                     <constraint firstItem="Wb5-jT-mtF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="HHk-gs-KcB"/>
+                    <constraint firstAttribute="bottom" secondItem="tXm-cc-adA" secondAttribute="bottom" id="Hfa-G6-V5A"/>
                     <constraint firstItem="Nei-a1-zF9" firstAttribute="top" secondItem="Wb5-jT-mtF" secondAttribute="bottom" constant="8" id="R6m-9R-tND"/>
+                    <constraint firstAttribute="trailing" secondItem="tXm-cc-adA" secondAttribute="trailing" id="caM-eh-o6L"/>
+                    <constraint firstItem="tXm-cc-adA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="tJc-Qf-xhl"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
