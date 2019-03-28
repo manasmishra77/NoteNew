@@ -23,6 +23,8 @@
 		B628AE7120823C3F00A10876 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B628AE6F20823C3F00A10876 /* NoteTableViewCell.xib */; };
 		B628AE74208283A900A10876 /* NoteMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628AE72208283A900A10876 /* NoteMO+CoreDataClass.swift */; };
 		B628AE75208283A900A10876 /* NoteMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628AE73208283A900A10876 /* NoteMO+CoreDataProperties.swift */; };
+		B62ABC3D224D36FF0056EC77 /* NoteWanderNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62ABC3C224D36FF0056EC77 /* NoteWanderNavigationBar.swift */; };
+		B62ABC3F224D37230056EC77 /* NoteWanderNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B62ABC3E224D37230056EC77 /* NoteWanderNavigationBar.xib */; };
 		B6600A50208330C6009CA788 /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6600A4F208330C6009CA788 /* NoteListViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		B628AE6F20823C3F00A10876 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
 		B628AE72208283A900A10876 /* NoteMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteMO+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B628AE73208283A900A10876 /* NoteMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B62ABC3C224D36FF0056EC77 /* NoteWanderNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteWanderNavigationBar.swift; sourceTree = "<group>"; };
+		B62ABC3E224D37230056EC77 /* NoteWanderNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteWanderNavigationBar.xib; sourceTree = "<group>"; };
 		B6600A4F208330C6009CA788 /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,8 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				B628AE6420823B3600A10876 /* NotesListViewController.swift */,
-				B628AE6320823B0300A10876 /* ViewModel */,
 				B628AE6220823AF300A10876 /* View */,
+				B628AE6320823B0300A10876 /* ViewModel */,
 			);
 			path = NotesList;
 			sourceTree = "<group>";
@@ -174,6 +178,8 @@
 				B628AE6520823B3600A10876 /* NotesListViewController.xib */,
 				B628AE6E20823C3F00A10876 /* NoteTableViewCell.swift */,
 				B628AE6F20823C3F00A10876 /* NoteTableViewCell.xib */,
+				B62ABC3C224D36FF0056EC77 /* NoteWanderNavigationBar.swift */,
+				B62ABC3E224D37230056EC77 /* NoteWanderNavigationBar.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B62ABC3F224D37230056EC77 /* NoteWanderNavigationBar.xib in Resources */,
 				B628AE6720823B3600A10876 /* NotesListViewController.xib in Resources */,
 				B628AE3B2082386000A10876 /* LaunchScreen.storyboard in Resources */,
 				B628AE382082386000A10876 /* Assets.xcassets in Resources */,
@@ -344,6 +351,7 @@
 				B628AE75208283A900A10876 /* NoteMO+CoreDataProperties.swift in Sources */,
 				B628AE6620823B3600A10876 /* NotesListViewController.swift in Sources */,
 				B628AE74208283A900A10876 /* NoteMO+CoreDataClass.swift in Sources */,
+				B62ABC3D224D36FF0056EC77 /* NoteWanderNavigationBar.swift in Sources */,
 				B628AE362082386000A10876 /* NoteWander.xcdatamodeld in Sources */,
 				B628AE6C20823B6F00A10876 /* NoteViewController.swift in Sources */,
 				B628AE7020823C3F00A10876 /* NoteTableViewCell.swift in Sources */,

@@ -2,8 +2,8 @@
 //  NoteViewController.swift
 //  NoteWander
 //
-//  Created by Manas Mishra on 14/04/18.
-//  Copyright © 2018 manas. All rights reserved.
+//  Created by Manas Mishra on 28/03/19.
+//  Copyright © 2019 manas. All rights reserved.
 //
 
 import UIKit
@@ -41,6 +41,7 @@ class NoteViewController: UIViewController {
             self.view.alpha = 1
             self.activityIndicator.stopAnimating()
             self.navigationController?.popViewController(animated: true)
+            self.navigationController?.navigationBar.isHidden = true
         }
     }
 }
@@ -77,6 +78,7 @@ extension NoteViewController: UITextViewDelegate, UITextFieldDelegate {
 //Helper function
 extension NoteViewController {
     private func configureVC() {
+        self.navigationController?.navigationBar.isHidden = false
         addNavigationButton()
         noteDescriptionTV.delegate = self
         titleTF.delegate = self

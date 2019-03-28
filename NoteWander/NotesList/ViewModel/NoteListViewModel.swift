@@ -2,8 +2,8 @@
 //  NoteListViewModel.swift
 //  NoteWander
 //
-//  Created by Manas Mishra on 15/04/18.
-//  Copyright © 2018 manas. All rights reserved.
+//  Created by Manas Mishra on 28/03/19.
+//  Copyright © 2019 manas. All rights reserved.
 //
 
 import Foundation
@@ -15,6 +15,7 @@ protocol NoteListViewModelDelegate {
     func deleteNote(at indexPath: IndexPath)
     func insertNote(at indexPath: IndexPath)
     func updateNote(at indexPath: IndexPath)
+    func reloadTable()
 }
 
 class NoteListViewModel: NSObject {
@@ -22,9 +23,23 @@ class NoteListViewModel: NSObject {
     var fetchResultController: NSFetchedResultsController<NoteMO>?
     var delegate: NoteListViewModelDelegate?
     let dateFormatter = DateFormatter()
-    var notes: [NoteMO] {
+    
+    var searchQuerie: String = ""
+    
+    private var notes: [NoteMO] {
         guard let noteArray = fetchResultController?.fetchedObjects else {return []}
         return noteArray
+    }
+    
+    func getNotes() -> [NoteMO] {
+        var newNotes = notes
+        if searchQuerie == "" {
+            return newNotes
+        }
+        newNotes = newNotes.filter({ (note) -> Bool in
+            return note.noteDescription?.contains(searchQuerie) ?? false
+        })
+        return newNotes
     }
     
     override init() {
@@ -33,15 +48,15 @@ class NoteListViewModel: NSObject {
     }
     
     func getTitle(_ index: Int) -> String {
-        let noteTitle = notes[index].title ?? ""
+        let noteTitle = getNotes()[index].title ?? ""
         return noteTitle
     }
     func getDescriptionOfNote(_ index: Int) -> String {
-        let noteDesc = notes[index].noteDescription ?? ""
+        let noteDesc = getNotes()[index].noteDescription ?? ""
         return noteDesc
     }
     func getUpdatedAt(_ index: Int) -> String {
-        guard let updatedDate = notes[index].updatedAt as Date? else {return ""}
+        guard let updatedDate = getNotes()[index].updatedAt as Date? else {return ""}
         dateFormatter.dateFormat = DateFormatType(rawValue: "yyyy-MM-dd HH:mm:ss")?.rawValue
         return dateFormatter.string(from: updatedDate)
     }
@@ -60,6 +75,12 @@ extension NoteListViewModel: NSFetchedResultsControllerDelegate {
             print(error)
         }
     }
+    
+    func fetchResultContaining(querie: String) {
+        searchQuerie = querie
+        delegate?.reloadTable()
+    }
+    
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .update:
